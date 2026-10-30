@@ -1,0 +1,18 @@
+# The run porelo-forge-clients' live check dispatches and reads back: its run, its one job, two steps and the job's
+# log. It needs no permission and uses no action, so nothing here is pinned but the runner image.
+name: Fixture
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  fixture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: First step
+        run: echo "forge-clients-live first step"
+      - name: Second step
+        run: echo "forge-clients-live second step"
