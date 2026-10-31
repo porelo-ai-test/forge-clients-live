@@ -1,0 +1,19 @@
+name: Forge client two-step fixture
+run-name: ${{ inputs.run_id }}
+on:
+    workflow_dispatch:
+        inputs:
+            run_id:
+                description: Unique fixture run identity
+                required: true
+                type: string
+permissions: {}
+jobs:
+    fixture:
+        runs-on: ubuntu-24.04
+        timeout-minutes: 2
+        steps:
+            - name: Start fixture
+              run: echo fixture-start
+            - name: Finish fixture
+              run: echo fixture-complete
